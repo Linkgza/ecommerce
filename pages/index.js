@@ -1,11 +1,16 @@
 import React from 'react';
 
-import { Product, FooterBanner, HeroBanner } from '../components';
+// import { Product, FooterBanner, HeroBanner } from '../components';
+import FooterBanner from '../components/FooterBanner';
+import HeroBanner from '../components/HeroBanner';
 
 const Home = () => {
   return (
-    <>
-      HeroBanner
+    <div>
+      {/* <HeroBannerJA /> */}
+      <div>
+        <HeroBanner />
+      </div>
       <div className="products-heading">
         <h2>Best Selling Products</h2>
         <p>Speakers of many variations</p>
@@ -13,9 +18,9 @@ const Home = () => {
       <div className="products-container">
         {['Product1', 'Product 2'].map((product) => product)}
       </div>
-      Footer
-    </>
+      <FooterBanner />
+      {/* <FooterBanner /> */}
+    </div>
   );
 };
-
 export default Home;
