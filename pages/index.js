@@ -6,8 +6,7 @@ import { HeroBanner, FooterBanner } from '../components';
 const Home = ({ products, bannerData }) => {
   return (
     <>
-      <HeroBanner />
-      {console.log(bannerData)}
+      <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
       <div>
         <div className="products-heading">
           <h2>Best Selling Products</h2>
@@ -25,8 +24,9 @@ const Home = ({ products, bannerData }) => {
 export const getServerSideProps = async () => {
   const query = '*[_type == "product"]';
   const products = await client.fetch(query);
+
   const bannerQuery = '*[_type == "banner"]';
-  const bannerData = await client.fetch(bannerquery);
+  const bannerData = await client.fetch(bannerQuery);
 
   return {
     props: { products, bannerData },
