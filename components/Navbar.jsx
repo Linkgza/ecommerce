@@ -13,7 +13,11 @@ const Navbar = () => {
         <Link href="/">JSM Headphones</Link>
       </p>
 
-      <button type="button" className="carticon" onclick="">
+      <button
+        type="button"
+        className="carticon"
+        onclick={() => setShowCart(true)}
+      >
         <AiOutlineShopping />
         <span className="cart-item-qty">{totalQuantities}</span>
       </button>
