@@ -5,7 +5,7 @@ const Context = createContext();
 
 export const StateContext = ({ children }) => {
   const [showCart, setShowCart] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState();
   const [totalPrice, setTotalPrice] = useState();
   const [totalQuantities, setTotalQuantities] = useState(0);
   const [qty, setQty] = useState(1);
@@ -35,6 +35,7 @@ export const StateContext = ({ children }) => {
 
       setCartItems([...cartItems, { ...product }]);
     }
+
     toast.success(`${qty} ${product.name} added to the cart.`);
   };
 
