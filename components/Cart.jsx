@@ -50,7 +50,7 @@ const Cart = () => {
             cartItems.map((item) => (
               <div className="product" key={item._id}>
                 <img
-                  src={urlFor(item.image)}
+                  src={urlFor(item.image[0])}
                   alt={item.name}
                   className="cart-product-image"
                 />
@@ -87,8 +87,10 @@ const Cart = () => {
               <h3>Subtotal:</h3>
               <h3>${totalPrice}</h3>
             </div>
-            <div className="btn">
-              <button type="button" className="btn" onClick=""></button>
+            <div className="btn-container">
+              <button type="button" className="btn" onClick="">
+                Pay with Stripe
+              </button>
             </div>
           </div>
         )}
